@@ -1,0 +1,42 @@
+input[type="text"],
+  select {
+  width: 1000px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background: transparent; /* Make select backgrounds transparent */
+  cursor: pointer; /* Change cursor style to indicate interaction */
+  align-items: center;
+}
+
+/* Style the container for search results */
+.search-results {
+    top: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    width: 975px;
+    padding: 15px;
+    border: 1px solid #818181;
+    border-radius: 8px;
+    background-color: rgba(236, 236, 230, 0.368);
+}
+
+
+/* Add styles for individual search result items */
+.search-results li {
+  font-size: 15px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  list-style:none;
+}
+
+/* Add hover effect for search result items */
+.search-results li:hover {
+  background-color: #007bff;
+}
+
