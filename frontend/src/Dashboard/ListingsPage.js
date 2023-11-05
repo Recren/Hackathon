@@ -6,10 +6,16 @@ import Header from './Header';
 function ListingsPage() {
   //state variables
   const [showListingPopUp, setListingPopUp] = useState(false); 
+  const [listings, setListings] = useState([]); // Array to store submitted reviews
   const ListingTxt = '';
 
   const openAddListingPopup = () => {
     setListingPopUp(!showListingPopUp);
+  };
+
+  const addListing = (listing) => {
+    // Add the submitted review to the array
+    setListings([...listings, listing]);
   };
 
 
@@ -31,11 +37,18 @@ function ListingsPage() {
         </div>
         <div className="listings-content">
           <h1> Your Listings </h1>
+          <button className="addlist" onClick={openAddListingPopup}><i className="fa-solid fa-plus fa-2x"></i></button>
+        {showListingPopUp && <AddListingPopUp content={ListingTxt} onClose={openAddListingPopup}  onSubmit={addListing} />}
+        <div className="listings-list">
+        {listings.map((list, index) => (
+          <div key={index} className="list">
+            <p>Title: {list.title}</p>
+            <p>Price: {list.price}</p>
+            <p>Category: {list.category}</p>
+          </div>
+        ))}
         </div>
-        <div className="add-listing">
-          <button className="addlist" onClick={openAddListingPopup}>Add Listing</button>
-        </div>
-        {showListingPopUp && <AddListingPopUp content={ListingTxt} onClose={openAddListingPopup} />}
+      </div>
     </div>
   </div>
 );
