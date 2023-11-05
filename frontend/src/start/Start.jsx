@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './Start.css';
 
-function Start(){
+function Start(props){
     const [items, setItems] = useState([]);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -23,7 +24,6 @@ function Start(){
     }
 
     getUniList();
-
 
      //handle search bar input change
     const handleInputChange = (e) => {
@@ -63,10 +63,6 @@ function Start(){
         setQuery(item);
         setSearchResults([]);
     };
-    //
-    const handleButtonClick = () => {
-
-    }
 
     return(
         <div>
@@ -104,9 +100,11 @@ function Start(){
                 )} 
 
                 {selectedItem !== null && 
-                    <div className='navigate'>
-                        <button onClick={handleButtonClick}>Find my school</button>
-                    </div>
+                    <Link to = "/home">
+                        <div className='navigate'>
+                            <button onClick={props.onButtonClick}>Find my school</button>
+                        </div>
+                    </Link>
                 }
             </div>
         </div> 
