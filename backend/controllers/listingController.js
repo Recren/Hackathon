@@ -34,7 +34,7 @@ const createListing = async (req, res) => {
     price,
     condition,
     views,
-    user,
+    user_id,
   } = req.body;
 
   //Add document to database
@@ -47,7 +47,7 @@ const createListing = async (req, res) => {
       price,
       condition,
       views,
-      user,
+      user_id,
     });
     res.status(200).json(listing);
   } catch (error) {

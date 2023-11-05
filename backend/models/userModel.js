@@ -6,47 +6,30 @@ const Schema = mongoose.Schema;
 //(tech, appliances, clothes, furniture, etc.)
 //product is more specific(tech -> laptop,phone,etc)
 //Structure of document
-const listingSchema = new Schema(
+const userSchema = new Schema(
   {
-    itemName: {
+    email: {
       type: String,
       required: true,
     },
-    description: {
+    firstName: {
       type: String,
       required: true,
     },
-    category: {
+    lastName: {
       type: String,
       required: true,
     },
-    product: {
+    password: {
       type: String,
       required: true,
     },
-    price: {
-      type: Number,
-      required: true,
-    },
-    condition: {
-      type: String,
-      required: true,
-    },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
-    views: {
-      type: Number,
-    },
-    //This will be the unique id of the user
-    user_id: {
-      type: String,
-      required: true,
+    listings: {
+      type: Array,
     },
   },
   { timestamps: true }
 );
 
 //Creates a model of the listing
-module.exports = mongoose.model("Listing", listingSchema);
+module.exports = mongoose.model("User", userSchema);
