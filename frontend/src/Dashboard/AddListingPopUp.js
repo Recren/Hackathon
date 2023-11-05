@@ -30,8 +30,33 @@ const AddListingPopUp = ({ content, onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     onSubmit({ title, price, category, condition, description});
-    onClose(); // Close the popup
-  };
+
+    let data = {
+      itemName: title,
+      description: description,
+      category: category,
+      price: price,
+      condition: condition,
+    };
+
+    fetch('http://localhost:4000/api/listings', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the JSON response from the server
+      })
+      .then(data => {
+        console.log(data); // Handle the response data
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+        onClose(); // Close the popup
+      };
 
   return (
   <div className="popup">
