@@ -6,6 +6,7 @@ import ProfilePage from "./Dashboard/ProfilePage"; // Import your ProfilePage co
 import {useState} from 'react';
 import AboutPage from "./Dashboard/AboutPage";
 import ListingsPage from './Dashboard/ListingsPage';
+import Trending from "./Dashboard/Trending";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
       <div className="Start">  
           <Routes>
             <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
-            <Route path="/home" element={<Header />} />
+            <Route path="/home" element={<Trending />} />
             <Route path="/profile" element={<ProfilePage/>} />
             <Route path="/about" element={<AboutPage/>} />
             <Route path="/profile/listings" element={<ListingsPage/>} />
