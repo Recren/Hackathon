@@ -1,10 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Dashboard/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProfilePage from "./Profile/ProfilePage"; // Import your ProfilePage component
 import Start from "./start/Start";
-import Dashboard from './Dashboard';
+import ProfilePage from "./Dashboard/ProfilePage"; // Import your ProfilePage component
 import {useState} from 'react';
 
 
@@ -19,9 +17,10 @@ function App() {
   <BrowserRouter>
     <div className="App">
       <div className="Start">  
-        {show && <Start onButtonClick={handleButtonClick}/>}
           <Routes>
-            <Route path="/home" element={<Dashboard />} />
+            <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
+            <Route path="/home" element={<Header />} />
+            <Route path="/profile" element={<ProfilePage/>} />
           </Routes>
       </div>
     </div>

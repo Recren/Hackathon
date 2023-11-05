@@ -1,6 +1,7 @@
 import {React, useState} from 'react';
 import './ProfilePage.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Header from './Header';
 
 function ProfilePage() {
   //state variables
@@ -10,7 +11,9 @@ function ProfilePage() {
   const [showPendingTransactions, setShowPendingTransactions] = useState(false);
   
   return (
+    
     <div className="profile">
+      <Header />
       <div className="heading">
         <h2> Hello, "UserName"! </h2>
   
