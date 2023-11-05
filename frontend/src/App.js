@@ -17,11 +17,11 @@ function App() {
   <BrowserRouter>
     <div className="App">
       <div className="Start">  
-        <Routes>
-          <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
-          <Route path="/home" element={<Header />} />
-          <Route path="/profile" element={<ProfilePage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
+            <Route path="/home" element={<Header />} />
+            <Route path="/profile" element={<ProfilePage/>} />
+          </Routes>
       </div>
     </div>
   </BrowserRouter>

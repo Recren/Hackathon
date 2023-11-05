@@ -5,11 +5,12 @@ import ProfilePage from "./Dashboard/ProfilePage"; // Import your ProfilePage co
 
 
 function Dashboard() {
+
   return (
     <div>
       <Header/>
       <Routes>
-        <Route path="/profile" component={ProfilePage} />
+        <Route path="/home/profile/" element={<ProfilePage/>} />
       </Routes>
     </div>
   );
