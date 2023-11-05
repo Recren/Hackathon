@@ -2,8 +2,10 @@
 
 .heading {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-left: 5px;
+  text-align: left;
+  color: rgba(1, 75, 15, 0.831)
 }
 
 .line {
@@ -11,5 +13,37 @@
   left: 0; /* Align the line to the left edge of the box */
   width: 100%; /* Make the line span the full width of the box */
   border: none; /* Remove default hr border */
-  border-top: 2px solid #000; /* Add a black top border for the line */
+  border-top: 2px solid rgb(73, 68, 68); /* Add a black top border for the line */
+}
+
+.profilenav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilenav ul li {
+  margin-right: 10px;
+  padding: 15px;
+}
+
+
+.profilenav ul li a,
+.profilenav ul li Link {
+  text-decoration: none;
+  color:rgba(1, 75, 15, 0.831);
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 1px;
+}
+
+.verticalline {
+  width: 2px; /* Adjust the width of the line as needed */
+  height: 100%; /* Make the line span the full height of the container */
+  background-color: rgba(178, 178, 178, 0.421); /* Line color (black in this example) */
+  position: absolute;
+  left: 300px; /* Position the line on the left side of the container */
+  margin-top: 0%; /* Align the line to the top of the container */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow */
 }

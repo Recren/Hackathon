@@ -5,16 +5,20 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function ProfilePage() {
   
   return (
-    <div classaName="profile">
+    <div className="profile">
       <div className="heading">
         <h2> Hello, "UserName" </h2>
-        <nav>
+  
+        <nav className="profilenav">
           <ul>
-            <li><a href="/Listings"><i className="fa-solid fa-question"></i> My Listings </a></li>
+            <li><a href="/Listings"><i className="fa-solid fa-store"></i> My Listings </a></li>
+            <li><a href="/Listings"><i className="fa-solid fa-bell"></i> Notifications </a></li>
+            <li><a href="/Listings"><i className="fa-solid fa-check"></i> Completed Transactions </a></li>
+            <li><a href="/Listings"><i className="fa-solid fa-hourglass-half"></i> Pending Transactions </a></li>
           </ul>
         </nav>
+        <div className='verticalline'></div>
       </div>
-      <div className="line"></div>
     </div>
   );
 }
