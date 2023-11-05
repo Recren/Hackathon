@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import './ListingsPage.css';
-import AddListingPopUp from './AddListingPopUp';
+import AddListingPopUp from '../Dashboard/AddListingPopUp';
 
 function ListingsPage() {
   //state variables

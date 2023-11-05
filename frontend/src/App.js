@@ -1,22 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Dashboard/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProfilePage from "./Profile/ProfilePage"; // Import your ProfilePage component
-import ListingsPage from './Listings/ListingsPage';
-import AboutPage from './About/AboutPage';
+import Start from "./start/Start";
+import ProfilePage from "./Dashboard/ProfilePage"; // Import your ProfilePage component
+import {useState} from 'react';
+
 
 function App() {
+
+  const [show, setShow] = useState(true);
+  const handleButtonClick = () => {
+    setShow(false);
+  }
+
   return (
   <BrowserRouter>
     <div className="App">
-      <Header />
+      <div className="Start">  
         <Routes>
+          <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
+          <Route path="/home" element={<Header />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/profile/listings" element={<ListingsPage />} />
         </Routes>
-
+      </div>
     </div>
   </BrowserRouter>
 

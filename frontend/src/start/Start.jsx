@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './Start.css';
+import logo from './start.jpeg';
 
-function Start(){
+function Start(props){
     const [items, setItems] = useState([]);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -23,7 +25,6 @@ function Start(){
     }
 
     getUniList();
-
 
      //handle search bar input change
     const handleInputChange = (e) => {
@@ -63,14 +64,15 @@ function Start(){
         setQuery(item);
         setSearchResults([]);
     };
-    //
-    const handleButtonClick = () => {
-
-    }
 
     return(
         <div>
+
             <div style={cursorStyle}>
+            <div className='title-bar'>
+                <h1> Select Your University </h1>
+            </div>
+            <img src={logo} alt="Description of the image" style={{ width: '600px', height: '200px', marginTop: '50px' }} />
                 <div className="search-container">
                     <input
                         type="text"
@@ -104,9 +106,11 @@ function Start(){
                 )} 
 
                 {selectedItem !== null && 
-                    <div className='navigate'>
-                        <button onClick={handleButtonClick}>Find my school</button>
-                    </div>
+                    <Link to = "/home">
+                        <div className='navigate'>
+                            <button className="find-button" onClick={props.onButtonClick}>Find my school</button>
+                        </div>
+                    </Link>
                 }
             </div>
         </div> 
