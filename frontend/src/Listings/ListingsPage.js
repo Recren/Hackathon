@@ -1,14 +1,21 @@
 import {React, useState} from 'react';
-import './ProfilePage.css'; 
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import './ListingsPage.css';
+import AddListingPopUp from './AddListingPopUp';
 
-function ProfilePage() {
-  
+function ListingsPage() {
+  //state variables
+  const [showListingPopUp, setListingPopUp] = useState(false); 
+  const ListingTxt = '';
+
+  const openAddListingPopup = () => {
+    setListingPopUp(!showListingPopUp);
+  };
+
+
   return (
-    <div className="profile">
+    <div className="listings">
       <div className="heading">
         <h2> Hello, "UserName"! </h2>
-  
         <nav className="profilenav">
           <ul>
             <li><a href="/profile/listings"><i className="fa-solid fa-store"></i> My Listings </a></li>
@@ -19,8 +26,15 @@ function ProfilePage() {
         </nav>
         <div className='verticalline'></div>
       </div>
-    </div>
-  );
+      <div className="listings-content">
+        <h1> Your Listings </h1>
+      </div>
+      <div className="add-listing">
+        <button className="addlist" onClick={openAddListingPopup}>Add Listing</button>
+      </div>
+      {showListingPopUp && <AddListingPopUp content={ListingTxt} onClose={openAddListingPopup} />}
+  </div>
+);
 }
 
-export default ProfilePage;
+export default ListingsPage;

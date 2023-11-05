@@ -1,0 +1,22 @@
+
+.listings {
+  display: flex;
+  
+}
+
+/* Main content area */
+.listings-content {
+  flex: 1; /* Let the content area take up the remaining space */
+  padding: 10px; /* Add some spacing for content */
+  color: rgba(1, 75, 15, 0.831);
+}
+
+.addlist {
+  margin-top: 33px;
+  margin-right: 20px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(1, 75, 15, 0.831);
+  border-radius: 4px;
+}

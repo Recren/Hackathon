@@ -17,7 +17,7 @@ function Header() {
         <nav>
           <ul>
             <li><a href="/"><i className="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="/about"><i className="fa-solid fa-question"></i> About</a></li>
+            <li><Link to="/about"><i className="fa-solid fa-question"></i> About</Link></li>
             <li><a href="/users"><i className="fa-solid fa-users"></i> Users</a></li>
             <li><Link to="/profile"><i className="fa-solid fa-circle-user"></i> My Profile</Link></li>
           </ul>
