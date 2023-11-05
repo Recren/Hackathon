@@ -2,10 +2,12 @@ import {React, useState} from 'react';
 import './AboutPage.css'; 
 import logo from './about.jpeg';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Header from './Header';
 
 function AboutPage() {
   return (
     <div className='about-content'> 
+      <Header/>
       <h1> Our Mission Statement</h1>
       <img src={logo} alt="Description of the image" style={{ width: '350px', height: '200px' }} />
       <div className = 'about-paragraph'> 

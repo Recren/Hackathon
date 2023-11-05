@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Start from "./start/Start";
 import ProfilePage from "./Dashboard/ProfilePage"; // Import your ProfilePage component
 import {useState} from 'react';
+import AboutPage from "./Dashboard/AboutPage";
+import ListingsPage from './Dashboard/ListingsPage';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
             <Route path="/" element={<Start onButtonClick={handleButtonClick}/>} />
             <Route path="/home" element={<Header />} />
             <Route path="/profile" element={<ProfilePage/>} />
+            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/profile/listings" element={<ListingsPage/>} />
           </Routes>
       </div>
     </div>

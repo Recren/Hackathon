@@ -1,11 +1,13 @@
 import {React, useState} from 'react';
 import './ProfilePage.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Header from './Header';
 
 function ProfilePage() {
   
   return (
     <div className="profile">
+      <Header/>
       <div className="heading">
         <h2> Hello, "UserName"! </h2>
   
