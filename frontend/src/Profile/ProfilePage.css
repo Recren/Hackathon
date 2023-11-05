@@ -24,18 +24,13 @@
 }
 
 .profilenav ul li {
-  margin-right: 10px;
-  padding: 15px;
-}
-
-
-.profilenav ul li a,
-.profilenav ul li Link {
   text-decoration: none;
   color:rgba(1, 75, 15, 0.831);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   margin-left: 1px;
+  margin-right: 10px;
+  padding: 15px;
 }
 
 .verticalline {
