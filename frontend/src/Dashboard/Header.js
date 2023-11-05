@@ -17,19 +17,19 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="/">
+              <a href="/home">
                 <i className="fa-solid fa-house"></i> Home
               </a>
             </li>
             <li>
-              <a href="/about">
+              <Link to="/about">
                 <i className="fa-solid fa-question"></i> About
-              </a>
+              </Link>
             </li>
             <li>
-              <Link to="/users">
+              <a href="/users">
                 <i className="fa-solid fa-users"></i> Users
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="/profile">

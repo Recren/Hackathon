@@ -1,0 +1,45 @@
+
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  text-align: left;
+  color: rgba(1, 75, 15, 0.831);
+}
+
+.line {
+  margin-top: 0px; /* Position the line 100px from the top of the box */
+  left: 0; /* Align the line to the left edge of the box */
+  width: 100%; /* Make the line span the full width of the box */
+  border: none; /* Remove default hr border */
+  border-top: 2px solid rgb(73, 68, 68); /* Add a black top border for the line */
+}
+
+.profilenav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilenav ul li a {
+  text-decoration: none;
+  color:rgba(1, 75, 15, 0.831);
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 1px;
+  margin-right: 10px;
+  padding: 15px;
+}
+
+.verticalline {
+  width: 2px; /* Adjust the width of the line as needed */
+  height: 100%; /* Make the line span the full height of the container */
+  background-color: rgba(180, 180, 180, 0.343); /* Line color (black in this example) */
+  position: absolute;
+  left: 300px; /* Position the line on the left side of the container */
+  margin-top: 0%; /* Align the line to the top of the container */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow */
+}
+
