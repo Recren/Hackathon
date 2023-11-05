@@ -7,6 +7,7 @@ import {useState} from 'react';
 import AboutPage from "./Dashboard/AboutPage";
 import ListingsPage from './Dashboard/ListingsPage';
 import Trending from "./Dashboard/Trending";
+import NotificationsPage from "./Dashboard/Notifications";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/profile" element={<ProfilePage/>} />
             <Route path="/about" element={<AboutPage/>} />
             <Route path="/profile/listings" element={<ListingsPage/>} />
+            <Route path="/profile/notifications" element={<NotificationsPage />} />
           </Routes>
       </div>
     </div>
