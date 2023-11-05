@@ -45,6 +45,8 @@ function ListingsPage() {
             <p>Title: {list.title}</p>
             <p>Price: {list.price}</p>
             <p>Category: {list.category}</p>
+            <p>Condition: {list.condition}</p>
+            <p>Description: {list.description}</p>
           </div>
         ))}
         </div>

@@ -70,9 +70,12 @@ function Start(props){
 
             <div style={cursorStyle}>
             <div className='title-bar'>
-                <h1> Let's Get You Shopping! </h1>
+                <p> Let's Get You Shopping! </p>
             </div>
             <img src={logo} alt="Description of the image" style={{ width: '600px', height: '200px', marginTop: '50px' }} />
+                <div className = "message"> 
+                <p> Select Your University</p>
+                </div>
                 <div className="search-container">
                     <input
                         type="text"

@@ -2,9 +2,11 @@ import {React, useState} from 'react';
 import "./AddListingPopUp.css";
 
 const AddListingPopUp = ({ content, onClose, onSubmit }) => {
-  const [title, setTitle] = useState(''); // State for the rating (1-5 stars)
-  const [price, setPrice] = useState(''); // State for the review text
+  const [title, setTitle] = useState(''); 
+  const [price, setPrice] = useState(''); 
   const [category, setCategory] = useState('Technology'); // Default category
+  const [condition, setCondition] = useState('Good'); 
+  const [description, setDescription] = useState(''); 
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -18,8 +20,16 @@ const AddListingPopUp = ({ content, onClose, onSubmit }) => {
     setCategory(event.target.value);
   };
 
+  const handleConditionChange = (event) => {
+    setCondition(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
   const handleSubmit = () => {
-    onSubmit({ title, price, category });
+    onSubmit({ title, price, category, condition, description});
     onClose(); // Close the popup
   };
 
@@ -55,6 +65,24 @@ const AddListingPopUp = ({ content, onClose, onSubmit }) => {
               <option value="Furniture">Furniture</option>
               <option value="Other">Other</option>
             </select>
+          </p>
+          <p>Select Condition:
+            <select
+              value={condition}
+              onChange={handleConditionChange}
+            >
+              <option value="New">New</option>
+              <option value="Like New">Like New</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Used">Used</option>
+              <option value="Very Used">Very Used</option>
+            </select>
+          </p>
+          <p>Enter Description: 
+            <textarea
+              value={description}
+              onChange={handleDescriptionChange}
+            />
           </p>
         </div>
         <button className="submit-button" onClick={handleSubmit}>Submit</button>
