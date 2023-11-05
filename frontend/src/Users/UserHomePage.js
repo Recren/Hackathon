@@ -1,28 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserHomePage.css";
+import Header from "../Dashboard/Header";
+import UserCard from "./userCard";
 
 function UserHomePage() {
+  const [user, setUsers] = useState([]);
+  const [query, setQuery] = useState("");
+  async function getUsers() {
+    return fetch("http://localhost:4000/api/users")
+      .then((response) => response.json())
+      .then((users) => {
+        console.log(users);
+        setUsers(users);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+
+  getUsers();
+
   return (
-    <div className="container">
-      <h1 style={{ marginTop: 50, fontSize: 50 }}>Active Users</h1>
-      <div className="user-container">
-        <a href="./" className="user-card">
-          <div className="user-info">
-            <h2>Steven Vo</h2>
-            <h2>sxv200093@utdallas.edu</h2>
-            <h2>65472599eefabfd501eb7083</h2>
+    <div>
+      <Header />
+      <div>
+        <div className="container">
+          <h1 style={{ marginTop: 50, fontSize: 50 }}>Active Users</h1>
+          <div className="user-container">
+            <div className="array-container">
+              {user.map((user, index) => (
+                <UserCard
+                  user_id={index}
+                  email={user.email}
+                  firstName={user.firstName}
+                  lastName={user.lastName}
+                />
+              ))}
+            </div>
           </div>
-        </a>
-        <a href="IndividualUserListings" className="user-card">
-          <div className="user-info">
-            <h2>Josh Xenon</h2>
-            <h2>jsx200000@utdallas.edu</h2>
-            <h2>6547299c186817cdc2b87d8e</h2>
-          </div>
-        </a>
-        <a href="./" className="user-card"></a>
+        </div>
+        <button className="add-user-button">Add User</button>
       </div>
     </div>
   );
 }
+
+/*
+function UserHomePage() {
+  return (
+    <div>
+      <Header />
+      <div className="container">
+        <h1 style={{ marginTop: 50, fontSize: 50 }}>Active Users</h1>
+        <div className="user-container">
+          <UserCard />
+        </div>
+      </div>
+    </div>
+  );
+}
+*/
 export default UserHomePage;

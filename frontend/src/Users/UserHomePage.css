@@ -42,3 +42,17 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.add-user-button {
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+  border: 7px solid rgba(1, 75, 15, 0.831);
+  border-radius: 7px;
+  background-color: white;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.add-user-button:hover {
+  transform: scale(1.1);
+}
