@@ -1,0 +1,19 @@
+.item-card {
+  width: 270px;
+  height: 270px;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.array-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

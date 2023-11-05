@@ -45,19 +45,4 @@ function UserHomePage() {
   );
 }
 
-/*
-function UserHomePage() {
-  return (
-    <div>
-      <Header />
-      <div className="container">
-        <h1 style={{ marginTop: 50, fontSize: 50 }}>Active Users</h1>
-        <div className="user-container">
-          <UserCard />
-        </div>
-      </div>
-    </div>
-  );
-}
-*/
 export default UserHomePage;
