@@ -39,7 +39,8 @@ const listingSchema = new Schema(
     views: {
       type: Number,
     },
-    user: {
+    //This will be the unique id of the user
+    user_id: {
       type: String,
       required: true,
     },

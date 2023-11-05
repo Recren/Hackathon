@@ -1,53 +1,26 @@
 const express = require("express");
-const Listing = require("../models/listingModel");
 const router = express.Router();
 
+const {
+  createListing,
+  getListings,
+  getSingleListing,
+  deleteListing,
+  updateListing,
+} = require("../controllers/listingController");
+
 //GET all the listings
-router.get("/", (req, res) => {
-  res.json({ mssg: "GET all listings" });
-});
+router.get("/", getListings);
 
 //GET single listing
-router.get("/:id", (req, res) => {
-  res.json({ mssg: "GET a single listing" });
-});
+router.get("/:id", getSingleListing);
 
 //POST a new listing
-router.post("/", async (req, res) => {
-  const {
-    itemName,
-    description,
-    category,
-    product,
-    price,
-    condition,
-    views,
-    user,
-  } = req.body;
-  try {
-    const listing = await Listing.create({
-      itemName,
-      description,
-      category,
-      product,
-      price,
-      condition,
-      views,
-      user,
-    });
-    res.status(200).json(listing);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
+router.post("/", createListing);
 
 //DELETE a lisitng
-router.delete("/:id", (req, res) => {
-  res.json({ mssg: "DELETE a listing" });
-});
+router.delete("/:id", deleteListing);
 
 //UPDATE a listing
-router.patch("/:id", (req, res) => {
-  res.json({ mssg: "Update a listing" });
-});
+router.patch("/:id", updateListing);
 module.exports = router;
