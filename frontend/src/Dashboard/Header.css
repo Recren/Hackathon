@@ -1,2 +1,53 @@
 /* CSS for Header.js */
 
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(1, 75, 15, 0.831);
+  color: rgb(246, 235, 203);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.title h1{
+  margin-left: 15px;
+}
+
+
+.header-right{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.header-right span {
+  margin-left: 5px; /* Add some space between icon and text */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:rgb(246, 235, 203);
+  font-size: 15px;
+  margin-left: 20px;
+}

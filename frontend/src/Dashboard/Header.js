@@ -2,23 +2,27 @@
 
 import React from 'react';
 import './Header.css'; 
-import logo from './utdlogo.jpeg';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Header() {
   return (
     <div className="header">
-      <div style={{ display: 'flex', justifyContent: 'left' }}>
-        <img
-          src={logo}
-          alt="Image Description"
-          style={{ maxWidth: '100%', height: '100px' }}
-        />
+      <div className="title">
+        <i className="fa-solid fa-meteor fa-3x"></i>
+        <h1> Website Name </h1>
       </div>
+
       <div className="header-right">
-        <i className="fa fa-user"></i>
-        <span>My Profile</span>
+        <nav>
+          <ul>
+            <li><a href="/"><i className="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="/about"><i className="fa-solid fa-question"></i> About</a></li>
+            <li><a href="/users"><i className="fa-solid fa-users"></i> Users</a></li>
+            <li><a href ="/myprofile"><i className="fa-solid fa-circle-user"></i> My Profile</a></li>
+          </ul>
+       </nav>
       </div>
-    </div>
+      </div>
   );
 }
 
